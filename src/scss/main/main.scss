@@ -1,0 +1,8 @@
+.main{
+    background-color: black;
+    background-image: url("../../assets/main/main-back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @import "title.scss";
+}
