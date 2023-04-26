@@ -1,11 +1,11 @@
 <template>
-  <Main/>
+  <Main />
 </template>
 <script>
-import Main from './pages/Main/Main.vue';
+import Main from "./pages/Main/Main.vue";
 export default {
   components: {
-    Main
+    Main,
   },
   name: "App",
   data() {

@@ -6,7 +6,7 @@
           <img src="../assets/header/logo.svg" class="logo-img" alt="" />
           <h3 class="logo-text">FireLinks</h3>
         </div>
-        <ul class="header_list">
+        <ul class="header_list" >
           <li class="heaader-item">Возможности</li>
           <li class="heaader-item">FAQ</li>
           <li class="heaader-item">Новости</li>
@@ -26,93 +26,34 @@
         <button class="Vhod btn">Вход</button>
         <button class="Registraciya btn">Регистрация</button>
       </div>
+      <div>
+        <span><img src="../assets/header/Vector-1.svg" alt="" /></span>
+        <span @click="toggleBurgerMenu"
+          ><img src="../assets/header/Vector.svg" alt=""
+        /></span>
+      </div>
+      <div class="burger_menu" v-if="$store.state.toggleMenu === true">
+        <Burger />
+      </div>
     </header>
   </div>
 </template>
 <script>
+import Burger from "./Burger.vue";
 export default {
   data() {
     return {};
   },
+  components: {
+    Burger,
+  },
+  methods: {
+    toggleBurgerMenu() {
+      this.$store.commit("toggleBurgerMenu")
+    },
+  },
 };
 </script>
 <style lang="scss">
-@import "../scss/header.scss";
-.header {
-  & * {
-    align-items: center;
-  }
-  justify-content: space-between;
-  display: flex;
-  padding: 12px 0;
-  &__nav {
-    display: flex;
-    color: white;
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      .logo-img {
-        width: 36px;
-        height: 41px;
-      }
-      .logo-text {
-        color: white;
-        font-size: 20px;
-        font-weight: 700;
-      }
-    }
-    .header_list {
-      display: flex;
-      margin-left: 30px;
-      gap: 29px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      align-items: center;
-      li{
-        cursor: pointer;
-        &:hover{
-            color: #d9d9d9;
-        }
-      }
-    }
-  }
-  &__btns {
-    gap: 11px;
-    display: flex;
-    button:active {
-      cursor: default;
-    }
-    button:nth-child(1){
-        width: auto;
-        height: auto;
-    }
-    button {
-      cursor: pointer;
-      display: flex;
-      width: 137px;
-      height: 50px;
-      text-align: center;
-      justify-content: center;
-      color: white;
-    }
-    button:nth-child(2) {
-      background: #33caff;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 16px;
-      border: none;
-      outline: none;
-    }
-    button:nth-child(3) {
-        background: transparent;
-      border: 1px solid #ffffff;
-      border-radius: 10px;
-    }
-    img {
-      height: 20px;
-    }
-  }
-}
+@import "../scss/header/header.scss";
 </style>

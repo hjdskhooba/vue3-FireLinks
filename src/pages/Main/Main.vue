@@ -1,19 +1,34 @@
 <template>
   <main class="main">
     <Header />
-    <Title/>
+    <Title />
+    <Benefit />
+    <Possibilities />
     <Footer />
   </main>
 </template>
 <script>
 import Header from "../../Layout/Header.vue";
 import Title from "./Title.vue";
+import Benefit from "./Benefit.vue";
+import Possibilities from "./Possibilities.vue";
 import Footer from "../../Layout/Footer.vue";
 export default {
   name: "Main",
-  components: { Header, Footer, Title },
+  components: { Header, Footer, Title, Benefit, Possibilities },
   data() {
-    return {};
+    return {
+      toggleMenu: this.$store.state.toggleMenu,
+    };
+  },
+  methods: {
+    toggleBurgerMenu() {
+      if (!this.toggleMenu) {
+        this.toggleMenu = true;
+      } else {
+        this.toggleMenu = false;
+      }
+    },
   },
 };
 </script>

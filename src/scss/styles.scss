@@ -1,7 +1,12 @@
 @import "global.scss";
 @import "./main/main.scss";
+@import "./header/header.scss";
+@import "./footer.scss";
 .container{
     max-width: 1440px;
     padding: 0 120px;
     margin: 0 auto;
+    @media (max-width: 949px) {
+        padding: 0 49px;
+    }
 }
