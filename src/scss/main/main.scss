@@ -11,6 +11,7 @@
   background: -ms-linear-gradient(to left top, blue, red);
   background: -o-linear-gradient(to left top, blue, red);
   background: linear-gradient(to left top, blue, red);
+  overflow: hidden;
   @import "title.scss";
   @import "possibilities.scss";
   @import "benefit.scss";

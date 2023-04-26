@@ -5,7 +5,7 @@
         <h2 class="posibilities-title title">Возможности сервиса</h2>
         <!-- Вот здесь будем использовать vuex -->
         <div class="posibilities__row" >
-          <div class="posibilities_item" v-for="item in possibleCards">
+          <div class="posibilities_item" data-aos="fade-right" v-for="item in possibleCards">
             <h4 class="posibilities_item-title">{{ item.title }}</h4>
             <p class="posibilities_item-desc">
               {{ item.description }}
@@ -17,6 +17,9 @@
             />
           </div>
         </div>
+        <!-- 27.04 -->
+        <!-- Подсмотрю с проекта stuff :) -->
+        <button class="btn show-more" >Show More</button>
       </div>
     </div>
     <br />

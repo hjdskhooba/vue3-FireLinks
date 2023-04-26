@@ -2,6 +2,9 @@
   @import "./burger.scss";
   & * {
     align-items: center;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
   }
   justify-content: space-between;
   display: flex;
@@ -21,8 +24,12 @@
       .logo-img {
         width: 36px;
         height: 41px;
+        backdrop-filter: blur(10px);
+        border-radius: 1.3px;
       }
       .logo-text {
+        backdrop-filter: blur(10px);
+        border-radius: 1.3px;
         color: white;
         font-size: 20px;
         font-weight: 700;
@@ -37,6 +44,9 @@
       line-height: 19px;
       align-items: center;
       li {
+        backdrop-filter: blur(10px);
+        padding: 1.3px 3.1px;
+        border-radius: 1.3px;
         cursor: pointer;
         &:hover {
           color: #d9d9d9;
@@ -109,8 +119,12 @@
       z-index: 100;
       right: 30.9%;
       align-items: center;
-      padding: 11px 0;
+      padding: 7px 0;
       gap: 21.99px;
+      img{
+        backdrop-filter: blur(10px);
+        border-radius: 1.3px;
+      }
     }
   }
   @media (max-width: 1010px) {

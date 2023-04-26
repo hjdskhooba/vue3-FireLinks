@@ -1,5 +1,5 @@
 <template>
-  <Main />
+  <router-view></router-view>
 </template>
 <script>
 import Main from "./pages/Main/Main.vue";

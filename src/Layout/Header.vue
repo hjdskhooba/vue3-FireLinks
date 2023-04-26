@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <header class="header">
+    <header class="header" data-aos="fade-in">
       <div class="header__nav">
         <div class="logo">
           <img src="../assets/header/logo.svg" class="logo-img" alt="" />
@@ -9,7 +9,7 @@
         <ul class="header_list" >
           <li class="heaader-item">Возможности</li>
           <li class="heaader-item">FAQ</li>
-          <li class="heaader-item">Новости</li>
+          <a href="#/news"><li class="heaader-item">Новости</li></a>
           <li class="heaader-item">Контакты</li>
         </ul>
       </div>

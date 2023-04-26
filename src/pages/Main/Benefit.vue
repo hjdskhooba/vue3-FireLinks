@@ -4,7 +4,10 @@
       <div class="benefit__body">
         <h3 class="benefit-title">Наш сервис будет полезен:</h3>
         <div class="benefit__blocks">
-          <div class="benefit__blocks-item">
+          <div
+            class="benefit__blocks-item"
+            data-aos="zoom-in"
+          >
             <h4 class="benefit__blocks-item-number">01</h4>
             <p class="benefit__blocks-item-paragraph">
               Интернет маркетологам, которые работают с покупным трафиком и
@@ -13,7 +16,11 @@
               email рассылками
             </p>
           </div>
-          <div class="benefit__blocks-item">
+          <div
+            class="benefit__blocks-item"
+            data-aos="zoom-in"
+            data-aos-duration="209"
+          >
             <h4 class="benefit__blocks-item-number">01</h4>
             <p class="benefit__blocks-item-paragraph">
               Интернет маркетологам, которые работают с покупным трафиком и
@@ -22,7 +29,11 @@
               email рассылками
             </p>
           </div>
-          <div class="benefit__blocks-item">
+          <div
+            class="benefit__blocks-item"
+            data-aos="zoom-in"
+            data-aos-duration="409"
+          >
             <h4 class="benefit__blocks-item-number">01</h4>
             <p class="benefit__blocks-item-paragraph">
               Интернет маркетологам, которые работают с покупным трафиком и
@@ -35,6 +46,7 @@
             src="../../assets/main/benefit/benefit-hands.png"
             alt=""
             class="benefit-hands"
+            data-aos="fade-left"
           />
         </div>
       </div>

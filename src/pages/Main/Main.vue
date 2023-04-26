@@ -1,5 +1,5 @@
 <template>
-  <main class="main">
+  <main class="main" data-aos="fade-in">
     <Header />
     <Title />
     <Benefit />
@@ -13,6 +13,7 @@ import Title from "./Title.vue";
 import Benefit from "./Benefit.vue";
 import Possibilities from "./Possibilities.vue";
 import Footer from "../../Layout/Footer.vue";
+
 export default {
   name: "Main",
   components: { Header, Footer, Title, Benefit, Possibilities },
