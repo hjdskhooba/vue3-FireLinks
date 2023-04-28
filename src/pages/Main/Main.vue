@@ -16,20 +16,17 @@ import Footer from "../../Layout/Footer.vue";
 
 export default {
   name: "Main",
-  components: { Header, Footer, Title, Benefit, Possibilities },
+  components: {
+    Header,
+    Footer,
+    Title,
+    Benefit,
+    Possibilities,
+  },
   data() {
     return {
       toggleMenu: this.$store.state.toggleMenu,
     };
-  },
-  methods: {
-    toggleBurgerMenu() {
-      if (!this.toggleMenu) {
-        this.toggleMenu = true;
-      } else {
-        this.toggleMenu = false;
-      }
-    },
   },
 };
 </script>

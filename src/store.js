@@ -50,6 +50,30 @@ const store = createStore({
         state.toggleMenu = false;
       }
     },
+    showMore(state, btn) {
+      if (state.possibleCards.length !== 6) {
+        state.possibleCards.push(
+          {
+            id: 3,
+            title: "Запасные ссылки",
+            description:
+              "Возможность указать дополнительные ссылки, на которые будут перенаправляться пользователи, в случае блокировки предыдущих ссылок различными сервисами",
+            img: "https://www.svgrepo.com/show/513185/cog.svg",
+          },
+          {
+            id: 4,
+            title: "Команды",
+            description:
+              "Возможность добавлять пользователей, распределять им роли и доступы к системе. Возможность подключения Telegram групп для команд, таким образом получать все важные оповещения о действиях команды в одном месте, чтобы не упустить ничего важного, а также оперативно реагировать на изменения.",
+            img: "https://www.svgrepo.com/show/513224/man.svg",
+          }
+        );
+        btn.textContent = "Hide"
+      }else{
+        state.possibleCards.splice(4,2);
+        btn.textContent = "Show More"
+      }
+    },
   },
 });
 

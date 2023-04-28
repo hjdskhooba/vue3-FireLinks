@@ -23,7 +23,7 @@
             alt=""
           />
         </button>
-        <button class="Vhod btn">Вход</button>
+        <button class="Vhod blue-btn">Вход</button>
         <button class="Registraciya btn">Регистрация</button>
       </div>
       <div>

@@ -4,22 +4,24 @@
       <div class="posibilities__body">
         <h2 class="posibilities-title title">Возможности сервиса</h2>
         <!-- Вот здесь будем использовать vuex -->
-        <div class="posibilities__row" >
-          <div class="posibilities_item" data-aos="fade-right" v-for="item in possibleCards">
+        <div class="posibilities__row">
+          <div
+            class="posibilities_item"
+            data-aos="fade-right"
+            v-for="item in possibleCards"
+          >
             <h4 class="posibilities_item-title">{{ item.title }}</h4>
             <p class="posibilities_item-desc">
               {{ item.description }}
             </p>
-            <img
-              class="img"
-              :src="item.img"
-              alt=""
-            />
+            <img class="img" :src="item.img" alt="" />
           </div>
         </div>
         <!-- 27.04 -->
         <!-- Подсмотрю с проекта stuff :) -->
-        <button class="btn show-more" >Show More</button>
+        <div class="show-btn-block">
+          <button class="btn show-more" @click="showMore">Show More</button>
+        </div>
       </div>
     </div>
     <br />
@@ -28,22 +30,25 @@
       alt=""
       class="last-grad-top"
     />
+    <button class="blue-btn">
+      <a href="#/register"> Регистрация </a>
+    </button>
   </section>
 </template>
 <script>
 export default {
   data() {
     return {
-      possibleCards: this.$store.state.possibleCards
+      possibleCards: this.$store.state.possibleCards,
     };
   },
   methods: {
     toggleBurgerMenuDown() {
       this.$store.commit("toggleBurgerMenuDown");
     },
-    log(log){
-      console.log(log)
-    }
+    showMore(e) {
+      this.$store.commit("showMore", e.target);
+    },
   },
 };
 </script>

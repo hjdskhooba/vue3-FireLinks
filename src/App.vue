@@ -2,11 +2,8 @@
   <router-view></router-view>
 </template>
 <script>
-import Main from "./pages/Main/Main.vue";
+
 export default {
-  components: {
-    Main,
-  },
   name: "App",
   data() {
     return {};

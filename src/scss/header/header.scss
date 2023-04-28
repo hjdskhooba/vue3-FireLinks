@@ -1,3 +1,11 @@
+.blue-btn {
+  background: #33caff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
 .header {
   @import "./burger.scss";
   & * {
@@ -72,14 +80,6 @@
       text-align: center;
       justify-content: center;
       color: white;
-    }
-    button:nth-child(2) {
-      background: #33caff;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 16px;
-      border: none;
-      outline: none;
     }
     button:nth-child(3) {
       background: transparent;
