@@ -8,7 +8,7 @@ setTimeout(() => {
       isSignedIn = true;
     } else {
       isSignedIn = false;
-      router.push("/login")
+      router.push("/login");
     }
   });
 }, 100);

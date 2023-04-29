@@ -5,17 +5,17 @@ import { useStore } from "vuex";
 const store = useStore();
 const possibleCards = computed(() => store.state.possibleCards).value;
 
-const logout = () => store.dispatch("logout")
-const toggleBurgerMenuDown = () => store.commit("toggleBurgerMenuDown");
+const logout = () => store.dispatch("logout");
 const showMore = (e) => store.commit("showMore", e.target);
 </script>
 
 <template>
-  <section class="posibilities" @click="toggleBurgerMenuDown">
+  <section class="posibilities">
     <div class="container">
       <div class="posibilities__body">
         <h2 class="posibilities-title title">Возможности сервиса</h2>
-        <!-- Вот здесь будем использовать vuex -->
+        <!-- Здесь vuex -->
+        <!-- 25.04 -->
         <div class="posibilities__row">
           <div
             class="posibilities_item"

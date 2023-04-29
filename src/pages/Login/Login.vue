@@ -1,25 +1,18 @@
-<script>
-import { ref } from 'vue';
-import { useStore } from 'vuex';
-export default {
-  name: "Login",
-  setup() {
-    const login_form = ref({});
-    const store = useStore()
+<script setup>
+import Footer from "@/Layout/Footer.vue";
+import Header from "@/Layout/Header.vue";
+import { ref } from "vue";
+import { useStore } from "vuex";
 
-    const login = () => {
-      store.dispatch('login', login_form.value)
-    }
-    
-    return {
-      login_form,
-      login
-    };
-  },
+const login_form = ref({});
+const store = useStore();
+const login = () => {
+  store.dispatch("login", login_form.value);
 };
 </script>
 
 <template>
+  <Header />
   <div class="back-login">
     <div class="login__wrapper">
       <form class="login login-form login-block" @submit.prevent="login">
@@ -45,10 +38,17 @@ export default {
           placeholder="Password"
         />
         <span class="forgot">Forgot Password?</span>
-        <input type="submit" value="Login" class="btn-login" aria-label="idk" @click="login">
+        <input
+          type="submit"
+          value="Login"
+          class="btn-login"
+          aria-label="idk"
+          @click="login"
+        />
       </form>
     </div>
   </div>
+  <Footer />
 </template>
 <style lang="scss">
 @import "../../scss/login.scss";

@@ -1,5 +1,6 @@
 <script setup>
 import { auth } from "./firebase";
+
 let isSignedIn = true;
 
 auth.onAuthStateChanged((user) => {
@@ -13,8 +14,8 @@ auth.onAuthStateChanged((user) => {
 });
 </script>
 <template>
-  <router-view v-if="!isSignedIn" to="/"></router-view>
-  <router-view v-else to="/login"></router-view>
+  <router-view v-if="!isSignedIn"></router-view>
+  <router-view v-else></router-view>
 </template>
 <style>
 @import "./scss/styles.scss";

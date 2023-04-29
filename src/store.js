@@ -135,9 +135,14 @@ const store = createStore({
       router.push("/");
     },
     async logout({ commit }) {
-      await signOut(auth);
-      commit("CLEAR_USER");
-      router.push("/login");
+      let is = confirm("Вы уверены что хотите выйти из акаунта ?");
+      if (is) {
+        await signOut(auth);
+        commit("CLEAR_USER");
+        router.push("/login");
+      } else {
+        null;
+      }
     },
 
     fetchUser({ commit }) {

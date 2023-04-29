@@ -1,5 +1,16 @@
-<script setup></script>
+<script setup>
+import Footer from "@/Layout/Footer.vue";
+import Header from "@/Layout/Header.vue";
+import Title from "./Title.vue";
+import useStore from "vuex";
+
+const hideMenu = () => useStore().commit("toggleBurgerMenuDown");
+</script>
 <template>
-  <div class="news">This is news page !</div>
+  <Header />
+  <main class="news" @click="hideMenu">
+    <Title />
+  </main>
+  <Footer />
 </template>
 <style lang="scss"></style>

@@ -1,5 +1,5 @@
 <template>
-  <main class="main" data-aos="fade-in">
+  <main class="main" data-aos="fade-in" @click="hideMenu">
     <Header />
     <Title />
     <Benefit />
@@ -7,7 +7,7 @@
     <Footer />
   </main>
 </template>
-<script>
+<script setup>
 import Header from "../../Layout/Header.vue";
 import Title from "./Title.vue";
 import Benefit from "./Benefit.vue";
@@ -16,26 +16,21 @@ import Footer from "../../Layout/Footer.vue";
 import { onBeforeMount } from "vue";
 import { useStore } from "vuex";
 
-export default {
-  name: "app",
-  components: {
-    Header,
-    Footer,
-    Title,
-    Benefit,
-    Possibilities,
-  },
-  setup() {
-    const store = useStore();
-
-    onBeforeMount(() => {
-      store.dispatch("fetchUser");
-    });
-    return {
-      user: store.state.user,
-    };
-  },
+const store = useStore();
+const hideMenu = (e) => {
+  if (
+    e.target.localName === "img" &&
+    e.target.currentSrc.includes("Vector.3f7a5892.svg")
+  ) {
+    return null;
+  } else {
+    return store.commit("toggleBurgerMenuDown");
+  }
 };
+
+onBeforeMount(() => {
+  store.dispatch("fetchUser");
+});
 </script>
 <style lang="scss">
 @import "../../scss/main/main.scss";

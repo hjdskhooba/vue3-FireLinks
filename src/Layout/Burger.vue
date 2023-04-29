@@ -1,6 +1,12 @@
+<script setup>
+import { useStore } from "vuex";
+const hideMenu = () => {
+  useStore().commit("toggleBurgerMenuDown");
+};
+</script>
 <template>
   <div class="burger-menu">
-    <ul class="menu__list" >
+    <ul class="menu__list">
       <li class="menu_item" @click="hideMenu">Возможности</li>
       <li class="menu_item" @click="hideMenu">FAQ</li>
       <li class="menu_item" @click="hideMenu">Новости</li>
@@ -8,17 +14,4 @@
     </ul>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods:{
-    hideMenu(){
-      this.$store.commit("toggleBurgerMenuDown")
-    }
-  }
-};
-</script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

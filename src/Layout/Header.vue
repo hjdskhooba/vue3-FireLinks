@@ -1,3 +1,10 @@
+<script setup>
+import Burger from "./Burger.vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+const toggleBurgerMenu = () => store.commit("toggleBurgerMenu");
+</script>
 <template>
   <div class="container">
     <header class="header" data-aos="fade-in">
@@ -25,18 +32,22 @@
             alt=""
           />
         </button>
-        <a href="#/login" v-if="$store.state.isSignedIn">
+        <a href="#/login" v-if="!$store.state.user">
           <button class="blue-btn">Вход</button>
         </a>
-        <a href="#/register" v-if="$store.state.isSignedIn">
+        <a href="#/register" v-if="!$store.state.user">
           <button class="blue-btn">
             <a href="#/register"> Регистрация </a>
           </button>
         </a>
-        <span v-else><img src="../assets/header/Vector-1.svg" alt="" /></span>
+        <span v-if="$store.state.user"
+          ><img src="../assets/header/Vector-1.svg" alt=""
+        /></span>
       </div>
       <div>
-        <span v-if="!$store.state.isSignedIn"><img src="../assets/header/Vector-1.svg" alt="" /></span>
+        <span v-if="$store.state.user"
+          ><img src="../assets/header/Vector-1.svg" alt=""
+        /></span>
         <span @click="toggleBurgerMenu"
           ><img src="../assets/header/Vector.svg" alt=""
         /></span>
@@ -47,22 +58,6 @@
     </header>
   </div>
 </template>
-<script>
-import Burger from "./Burger.vue";
-export default {
-  data() {
-    return {};
-  },
-  components: {
-    Burger,
-  },
-  methods: {
-    toggleBurgerMenu() {
-      this.$store.commit("toggleBurgerMenu");
-    },
-  },
-};
-</script>
 <style lang="scss">
 @import "../scss/header/header.scss";
 </style>

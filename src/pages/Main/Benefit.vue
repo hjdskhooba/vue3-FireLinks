@@ -1,14 +1,9 @@
 <script setup>
-import { useStore } from "vuex";
-const store = useStore();
-const hideMenu = () => {
-  store.commit("toggleBurgerMenuDown");
-};
 </script>
 
 <template>
-  <section class="benefit" @click="hideMenu">
-    <div class="container" @click="toggle">
+  <section class="benefit">
+    <div class="container">
       <div class="benefit__body">
         <h3 class="benefit-title">Наш сервис будет полезен:</h3>
         <div class="benefit__blocks">

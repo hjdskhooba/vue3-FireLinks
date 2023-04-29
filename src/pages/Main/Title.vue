@@ -1,17 +1,7 @@
-<script>
-import { useStore } from "vuex";
-export default {
-  setup() {
-    const store = useStore();
-    return {
-      toggleBurgerMenuDown: () => store.commit("toggleBurgerMenuDown"),
-    };
-  },
-};
-</script>
+<script setup></script>
 
 <template>
-  <section class="title-block main__title" @click="toggleBurgerMenuDown">
+  <section class="title-block main__title">
     <div class="container">
       <div class="title__body">
         <h1
