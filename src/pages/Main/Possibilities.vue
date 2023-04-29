@@ -1,3 +1,14 @@
+<script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+const possibleCards = computed(() => store.state.possibleCards).value;
+
+const toggleBurgerMenuDown = () => store.commit("toggleBurgerMenuDown");
+const showMore = (e) => store.commit("showMore", e.target);
+</script>
+
 <template>
   <section class="posibilities" @click="toggleBurgerMenuDown">
     <div class="container">
@@ -9,6 +20,7 @@
             class="posibilities_item"
             data-aos="fade-right"
             v-for="item in possibleCards"
+            :key="item.id"
           >
             <h4 class="posibilities_item-title">{{ item.title }}</h4>
             <p class="posibilities_item-desc">
@@ -35,20 +47,3 @@
     </button>
   </section>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      possibleCards: this.$store.state.possibleCards,
-    };
-  },
-  methods: {
-    toggleBurgerMenuDown() {
-      this.$store.commit("toggleBurgerMenuDown");
-    },
-    showMore(e) {
-      this.$store.commit("showMore", e.target);
-    },
-  },
-};
-</script>

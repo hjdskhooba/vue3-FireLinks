@@ -85,16 +85,18 @@
     max-width: 100%;
     width: 100%;
   }
-  .blue-btn {
-    padding: 14px 39px;
-    color: white;
-    font-weight: 700;
-    font-size: 16px;
+  .blue-btn{
     margin: 30px auto;
-    cursor: pointer;
-    a{
-      text-decoration: none;
-      color: white;
-    }
+  }
+}
+.blue-btn {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 39px;
+  cursor: pointer;
+  a{
+    text-decoration: none;
+    color: white;
   }
 }

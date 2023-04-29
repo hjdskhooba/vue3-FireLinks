@@ -2,11 +2,13 @@
   <div class="container">
     <header class="header" data-aos="fade-in">
       <div class="header__nav">
-        <div class="logo">
-          <img src="../assets/header/logo.svg" class="logo-img" alt="" />
-          <h3 class="logo-text">FireLinks</h3>
-        </div>
-        <ul class="header_list" >
+        <a href="#/">
+          <div class="logo">
+            <img src="../assets/header/logo.svg" class="logo-img" alt="" />
+            <h3 class="logo-text">FireLinks</h3>
+          </div>
+        </a>
+        <ul class="header_list">
           <li class="heaader-item">Возможности</li>
           <li class="heaader-item">FAQ</li>
           <a href="#/news"><li class="heaader-item">Новости</li></a>
@@ -23,8 +25,14 @@
             alt=""
           />
         </button>
-        <button class="Vhod blue-btn">Вход</button>
-        <button class="Registraciya btn">Регистрация</button>
+        <a href="#/login">
+          <button class="blue-btn">Вход</button>
+        </a>
+        <a href="#/register">
+          <button class="blue-btn">
+            <a href="#/register"> Регистрация </a>
+          </button>
+        </a>
       </div>
       <div>
         <span><img src="../assets/header/Vector-1.svg" alt="" /></span>
@@ -49,7 +57,7 @@ export default {
   },
   methods: {
     toggleBurgerMenu() {
-      this.$store.commit("toggleBurgerMenu")
+      this.$store.commit("toggleBurgerMenu");
     },
   },
 };

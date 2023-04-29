@@ -1,3 +1,15 @@
+<script>
+import { useStore } from "vuex";
+export default {
+  setup() {
+    const store = useStore();
+    return {
+      toggleBurgerMenuDown: () => store.commit("toggleBurgerMenuDown"),
+    };
+  },
+};
+</script>
+
 <template>
   <section class="title-block main__title" @click="toggleBurgerMenuDown">
     <div class="container">
@@ -22,15 +34,3 @@
     <img src="../../assets/main/benefit/benefit-back.png" alt="" />
   </section>
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {
-    toggleBurgerMenuDown() {
-      this.$store.commit("toggleBurgerMenuDown");
-    },
-  },
-};
-</script>

@@ -1,13 +1,18 @@
+<script setup>
+import { useStore } from "vuex";
+const store = useStore();
+const hideMenu = () => {
+  store.commit("toggleBurgerMenuDown");
+};
+</script>
+
 <template>
   <section class="benefit" @click="hideMenu">
     <div class="container" @click="toggle">
       <div class="benefit__body">
         <h3 class="benefit-title">Наш сервис будет полезен:</h3>
         <div class="benefit__blocks">
-          <div
-            class="benefit__blocks-item"
-            data-aos="zoom-in"
-          >
+          <div class="benefit__blocks-item" data-aos="zoom-in">
             <h4 class="benefit__blocks-item-number">01</h4>
             <p class="benefit__blocks-item-paragraph">
               Интернет маркетологам, которые работают с покупным трафиком и
@@ -59,15 +64,3 @@
     />
   </section>
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {
-    hideMenu() {
-      this.$store.commit("toggleBurgerMenuDown");
-    },
-  },
-};
-</script>

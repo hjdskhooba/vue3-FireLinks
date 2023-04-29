@@ -1,9 +1,6 @@
+<script setup>
+</script>
 <template>
-  <!-- <form class="register register-form form login">
-        <input type="text" class="email" placeholder="Email" aria-label="idk">
-        <input type="text" class="password" placeholder="Password" aria-label="idk">
-        <input type="text" class="password confirm" placeholder="Confirm Password" aria-label="idk">
-    </form> -->
   <div class="back-login">
     <div class="login__wrapper register">
       <form class="login login-form">
@@ -13,15 +10,20 @@
           alt=""
         />
         <h3 class="login-title">Registering</h3>
-        <input class="email" type="text" aria-label="idk" placeholder="Email" />
+        <input
+          class="email"
+          type="email"
+          aria-label="idk"
+          placeholder="Email"
+        />
         <br />
         <input
           class="password"
-          type="text"
+          type="password"
           aria-label="idk"
           placeholder="Password"
         />
-        <br>
+        <br />
         <input
           class="confirm password"
           type="text"
@@ -29,22 +31,15 @@
           placeholder="Confirm Password"
         />
         <span class="forgot">Dont have an account ?</span>
-        <button class="btn-login">Sign Up</button>
+        <button class="btn-login" type="submit">Sign Up</button>
       </form>
     </div>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-};
-</script>
 <style lang="scss">
 .register {
-    .login{
-        width: 600px;
-    }
+  .login {
+    width: 600px;
+  }
 }
 </style>

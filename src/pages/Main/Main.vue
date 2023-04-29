@@ -13,20 +13,14 @@ import Title from "./Title.vue";
 import Benefit from "./Benefit.vue";
 import Possibilities from "./Possibilities.vue";
 import Footer from "../../Layout/Footer.vue";
-
 export default {
-  name: "Main",
+  name: "app",
   components: {
     Header,
     Footer,
     Title,
     Benefit,
     Possibilities,
-  },
-  data() {
-    return {
-      toggleMenu: this.$store.state.toggleMenu,
-    };
   },
 };
 </script>
