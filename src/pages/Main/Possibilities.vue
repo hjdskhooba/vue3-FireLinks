@@ -5,6 +5,7 @@ import { useStore } from "vuex";
 const store = useStore();
 const possibleCards = computed(() => store.state.possibleCards).value;
 
+const logout = () => store.dispatch("logout")
 const toggleBurgerMenuDown = () => store.commit("toggleBurgerMenuDown");
 const showMore = (e) => store.commit("showMore", e.target);
 </script>
@@ -30,7 +31,6 @@ const showMore = (e) => store.commit("showMore", e.target);
           </div>
         </div>
         <!-- 27.04 -->
-        <!-- Подсмотрю с проекта stuff :) -->
         <div class="show-btn-block">
           <button class="btn show-more" @click="showMore">Show More</button>
         </div>
@@ -43,7 +43,8 @@ const showMore = (e) => store.commit("showMore", e.target);
       class="last-grad-top"
     />
     <button class="blue-btn">
-      <a href="#/register"> Регистрация </a>
+      <a @click="logout" v-if="$store.state.user"> Выйти </a>
+      <a href="#/login" v-else> Войти </a>
     </button>
   </section>
 </template>

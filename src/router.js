@@ -1,15 +1,68 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Main from "./pages/Main/Main.vue"
-import News from "./pages/News/News.vue"
-import Login from "./pages/Login/Login.vue"
-import Register from "./pages/Login/Register.vue"
+import { auth } from "./firebase";
 
-export default createRouter({
-    history: createWebHashHistory(),
-    routes: [
-        {path: '/main', component: Main, alias: "/"},
-        {path: "/news", component: News},
-        {path: "/login", component: Login},
-        {path: "/register", component: Register},
-    ]
-})
+let isSignedIn = true;
+setTimeout(() => {
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      isSignedIn = true;
+    } else {
+      isSignedIn = false;
+      router.push("/login")
+    }
+  });
+}, 100);
+
+const routes = [
+  {
+    path: "/main",
+    name: "Main",
+    component: () => import("./pages/Main/Main.vue"),
+    alias: "/",
+    meta: {
+      requiresAuth: false,
+    },
+  },
+  {
+    path: "/news",
+    name: "News",
+    component: () => import("./pages/News/News.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+  {
+    name: "Login",
+    path: "/login",
+    component: () => import("./pages/Login/Login.vue"),
+  },
+  {
+    name: "Register",
+    path: "/register",
+    component: () => import("./pages/Login/Register.vue"),
+  },
+];
+
+const router = createRouter({
+  history: createWebHashHistory(process.env.BASE_URL),
+  routes,
+});
+
+setTimeout(() => {
+  router.beforeEach((to, from, next) => {
+    if (to.path === "/login" && isSignedIn === true) {
+      next("/");
+      return;
+    }
+    if (
+      to.matched.some((record) => record.meta.requiresAuth === true) &&
+      isSignedIn === false
+    ) {
+      next("/login");
+      console.log("Sign in please");
+      return;
+    }
+    next();
+  });
+}, 600);
+export default router;

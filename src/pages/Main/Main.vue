@@ -13,6 +13,9 @@ import Title from "./Title.vue";
 import Benefit from "./Benefit.vue";
 import Possibilities from "./Possibilities.vue";
 import Footer from "../../Layout/Footer.vue";
+import { onBeforeMount } from "vue";
+import { useStore } from "vuex";
+
 export default {
   name: "app",
   components: {
@@ -21,6 +24,16 @@ export default {
     Title,
     Benefit,
     Possibilities,
+  },
+  setup() {
+    const store = useStore();
+
+    onBeforeMount(() => {
+      store.dispatch("fetchUser");
+    });
+    return {
+      user: store.state.user,
+    };
   },
 };
 </script>

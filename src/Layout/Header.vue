@@ -25,17 +25,18 @@
             alt=""
           />
         </button>
-        <a href="#/login">
+        <a href="#/login" v-if="$store.state.isSignedIn">
           <button class="blue-btn">Вход</button>
         </a>
-        <a href="#/register">
+        <a href="#/register" v-if="$store.state.isSignedIn">
           <button class="blue-btn">
             <a href="#/register"> Регистрация </a>
           </button>
         </a>
+        <span v-else><img src="../assets/header/Vector-1.svg" alt="" /></span>
       </div>
       <div>
-        <span><img src="../assets/header/Vector-1.svg" alt="" /></span>
+        <span v-if="!$store.state.isSignedIn"><img src="../assets/header/Vector-1.svg" alt="" /></span>
         <span @click="toggleBurgerMenu"
           ><img src="../assets/header/Vector.svg" alt=""
         /></span>
