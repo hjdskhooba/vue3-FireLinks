@@ -19,8 +19,9 @@ import { useStore } from "vuex";
 const store = useStore();
 const hideMenu = (e) => {
   if (
-    e.target.localName === "img" &&
-    e.target.currentSrc.includes("Vector.3f7a5892.svg")
+    (e.target.localName === "img" &&
+      e.target.currentSrc.includes("Vector.3f7a5892.svg")) ||
+    e.target.className.includes("burger-menu")
   ) {
     return null;
   } else {

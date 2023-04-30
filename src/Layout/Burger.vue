@@ -1,7 +1,8 @@
 <script setup>
 import { useStore } from "vuex";
+const store = useStore()
 const hideMenu = () => {
-  useStore().commit("toggleBurgerMenuDown");
+  console.log("aaa")
 };
 </script>
 <template>

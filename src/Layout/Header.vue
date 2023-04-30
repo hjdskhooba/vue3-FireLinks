@@ -40,14 +40,20 @@ const toggleBurgerMenu = () => store.commit("toggleBurgerMenu");
             <a href="#/register"> Регистрация </a>
           </button>
         </a>
-        <span v-if="$store.state.user"
-          ><img src="../assets/header/Vector-1.svg" alt=""
-        /></span>
+        <span v-if="$store.state.user">
+          <a href="#/profile"
+          >
+            <img src="../assets/header/Vector-1.svg" alt="" />
+          </a>
+        </span>
       </div>
       <div>
-        <span v-if="$store.state.user"
-          ><img src="../assets/header/Vector-1.svg" alt=""
-        /></span>
+        <span v-if="$store.state.user">
+          <a href="#/profile"
+          >
+            <img src="../assets/header/Vector-1.svg" alt="" />
+          </a>
+        </span>
         <span @click="toggleBurgerMenu"
           ><img src="../assets/header/Vector.svg" alt=""
         /></span>

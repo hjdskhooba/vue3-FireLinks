@@ -20,7 +20,7 @@ const routes = [
     component: () => import("./pages/Main/Main.vue"),
     alias: "/",
     meta: {
-      requiresAuth: false,
+      requiresAuth: true,
     },
   },
   {
@@ -28,8 +28,17 @@ const routes = [
     name: "News",
     component: () => import("./pages/News/News.vue"),
     meta: {
-      requiresAuth: false,
+      requiresAuth: true,
     },
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: () => import("./Components/Profile.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+    alias: ["/kabinet", '/me', '/profile']
   },
   {
     name: "Login",
