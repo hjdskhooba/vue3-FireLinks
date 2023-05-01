@@ -1,9 +1,9 @@
 <script setup>
 import Burger from "./Burger.vue";
 import { useStore } from "vuex";
-
 const store = useStore();
 const toggleBurgerMenu = () => store.commit("toggleBurgerMenu");
+const smoothScroll = () => store.commit("smoothScroll", 'possibilities')
 </script>
 <template>
   <div class="container">
@@ -16,7 +16,7 @@ const toggleBurgerMenu = () => store.commit("toggleBurgerMenu");
           </div>
         </a>
         <ul class="header_list">
-          <li class="heaader-item">Возможности</li>
+          <li class="heaader-item" @click="smoothScroll">Возможности</li>
           <li class="heaader-item">FAQ</li>
           <a href="#/news"><li class="heaader-item">Новости</li></a>
           <li class="heaader-item">Контакты</li>

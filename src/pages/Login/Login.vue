@@ -4,17 +4,19 @@ import Header from "@/Layout/Header.vue";
 import { ref } from "vue";
 import { useStore } from "vuex";
 
-const login_form = ref({});
 const store = useStore();
+const login_form = ref({});
+const hideMenu = ()=>store.commit("toggleBurgerMenuDown")
 const login = () => {
   store.dispatch("login", login_form.value);
 };
+
 </script>
 
 <template>
   <Header />
-  <div class="back-login">
-    <div class="login__wrapper">
+  <div class="back-login" @click="hideMenu">
+    <div class="login__wrapper" >
       <form class="login login-form login-block" @submit.prevent="login">
         <img
           src="https://repository-images.githubusercontent.com/106262467/4cbe6700-41c9-11ea-8860-57668b5a0ec2"

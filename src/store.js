@@ -57,6 +57,9 @@ const store = createStore({
         state.toggleMenu = false;
       }
     },
+    smoothScroll(state, el){
+      el.scrollIntoView()
+    },
     toggleBurgerMenuDown(state) {
       if (state.toggleMenu == true) {
         state.toggleMenu = false;

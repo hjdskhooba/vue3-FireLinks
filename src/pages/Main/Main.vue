@@ -3,7 +3,7 @@
     <Header />
     <Title />
     <Benefit />
-    <Possibilities />
+    <Possibilities @scrollPath="scrollPath"/>
     <Footer />
   </main>
 </template>
@@ -28,7 +28,9 @@ const hideMenu = (e) => {
     return store.commit("toggleBurgerMenuDown");
   }
 };
-
+const scrollPath = computed((data)=>{
+  console.log(data)
+})
 onBeforeMount(() => {
   store.dispatch("fetchUser");
 });

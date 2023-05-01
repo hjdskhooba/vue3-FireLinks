@@ -2,14 +2,13 @@
 import { auth } from "./firebase";
 
 let isSignedIn = true;
-
 auth.onAuthStateChanged((user) => {
   if (user) {
     isSignedIn = true;
-    console.log("good");
+    console.log("You have successfully registered and logged in.");
   } else {
     isSignedIn = false;
-    console.log("not good");
+    console.log("You haven't logged in.");
   }
 });
 </script>

@@ -1,7 +1,9 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useStore } from "vuex";
+const emit = defineEmits(['possibilities'])
 
+const possibilities = ref(null);
 const store = useStore();
 const possibleCards = computed(() => store.state.possibleCards).value;
 
@@ -10,7 +12,7 @@ const showMore = (e) => store.commit("showMore", e.target);
 </script>
 
 <template>
-  <section class="posibilities">
+  <section class="posibilities" ref="possibilities">
     <div class="container">
       <div class="posibilities__body">
         <h2 class="posibilities-title title">Возможности сервиса</h2>
