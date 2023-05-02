@@ -13,7 +13,7 @@ import Title from "./Title.vue";
 import Benefit from "./Benefit.vue";
 import Possibilities from "./Possibilities.vue";
 import Footer from "../../Layout/Footer.vue";
-import { onBeforeMount } from "vue";
+import { onBeforeMount, computed } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
